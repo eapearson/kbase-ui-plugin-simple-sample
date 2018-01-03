@@ -1,0 +1,37 @@
+## YAML Template.
+---
+package:
+    author: Erik Pearson
+    name: simple-sample
+    description: A simple plugin composed of just a top level panel
+    date: January 3, 2018
+    version: 0.1.0
+source:
+    styles:
+        -
+            file: styles.css
+install:
+    widgets:
+        -
+            id: sample_panel
+            module: panel
+            type: factory
+        -
+            id: sample_factoryWidget
+            module: widgets/factory-widget
+            type: factory
+    routes:
+        -
+            path: ['sample']
+            queryParams: 
+                param1: {}
+            widget: sample_panel
+            authorization: true
+    menu:
+        -
+            name: sample
+            definition:
+                path: sample
+                label: Sample Panel
+                icon: bicycle
+        
